@@ -7,6 +7,7 @@ plugins {
 android {
     namespace = "com.sevara.habbittracker"
     compileSdk = 35
+    //Test comment
 
     defaultConfig {
         applicationId = "com.sevara.habbittracker"

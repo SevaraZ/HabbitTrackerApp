@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sevara.data"
+    namespace = "com.sevara.di"
     compileSdk = 35
 
     defaultConfig {
@@ -35,16 +35,18 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":presentation"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
-    //room
+    implementation (libs.hilt.android)
+    kapt (libs.hilt.compiler)
     implementation (libs.androidx.room.runtime)
     implementation (libs.androidx.room.ktx)
 
-
     testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+
 }
